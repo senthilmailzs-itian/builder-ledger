@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Shop Management</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">admin (ADMIN)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="admin-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="admin-user-management.html">👥 User Management</a>
+                    <a class="nav-link" href="admin-project-management.html">🏗️ Project Management</a>
+                    <a class="nav-link active" href="admin-shop-management.html">🏪 Shop Management</a>
+                    <a class="nav-link" href="admin-category-management.html">📁 Category Management</a>
+                    <a class="nav-link" href="admin-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="admin-shop-ledger.html">📖 Shop Ledger</a>
+                    <a class="nav-link" href="admin-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="admin-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Shop Management</h2>
+                    <div>
+                        <select class="form-select form-select-sm d-inline-block w-auto me-2">
+                            <option selected>All Status</option>
+                            <option>ACTIVE</option>
+                            <option>CLOSED</option>
+                        </select>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addShopModal">+
+                            Add Shop</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Shop Name</th>
+                                    <th>Status</th>
+                                    <th>Outstanding Payable</th>
+                                    <th>Created Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ABC Cement Suppliers</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-danger">₹1,25,000</td>
+                                    <td>2025-12-01</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        <button class="btn btn-sm btn-outline-warning">Close</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>XYZ Steel Works</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-danger">₹3,50,000</td>
+                                    <td>2025-12-05</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        <button class="btn btn-sm btn-outline-warning">Close</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rajesh Hardware</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-success">₹0</td>
+                                    <td>2025-11-20</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        <button class="btn btn-sm btn-outline-warning">Close</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Modern Electricals</td>
+                                    <td><span class="badge bg-secondary">CLOSED</span></td>
+                                    <td class="text-success">₹0</td>
+                                    <td>2025-10-10</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        <button class="btn btn-sm btn-outline-success">Reopen</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>City Plumbing</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-danger">₹75,500</td>
+                                    <td>2026-01-10</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        <button class="btn btn-sm btn-outline-warning">Close</button>
+                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addShopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Shop</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Shop Name</label>
+                            <input type="text" class="form-control" placeholder="Enter shop name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select">
+                                <option value="ACTIVE" selected>ACTIVE</option>
+                                <option value="CLOSED">CLOSED</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save
+                        Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

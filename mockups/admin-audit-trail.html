@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Audit Trail</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">admin (ADMIN)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="admin-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="admin-user-management.html">👥 User Management</a>
+                    <a class="nav-link" href="admin-project-management.html">🏗️ Project Management</a>
+                    <a class="nav-link" href="admin-shop-management.html">🏪 Shop Management</a>
+                    <a class="nav-link" href="admin-category-management.html">📁 Category Management</a>
+                    <a class="nav-link" href="admin-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="admin-shop-ledger.html">📖 Shop Ledger</a>
+                    <a class="nav-link active" href="admin-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="admin-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Audit Trail</h2>
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" placeholder="From Date" value="2026-01-01">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" placeholder="To Date" value="2026-01-15">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option>All Users</option>
+                            <option>admin</option>
+                            <option>john_accountant</option>
+                            <option>mary_accountant</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option>All Actions</option>
+                            <option>CREATE</option>
+                            <option>UPDATE</option>
+                            <option>DELETE</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Entry ID</th>
+                                    <th>Action</th>
+                                    <th>Field</th>
+                                    <th>Old Value</th>
+                                    <th>New Value</th>
+                                    <th>Changed By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-01-15 17:30:45</td>
+                                    <td>1247</td>
+                                    <td><span class="badge bg-success">CREATE</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>Entry Created</td>
+                                    <td>john_accountant</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 16:45:12</td>
+                                    <td>1246</td>
+                                    <td><span class="badge bg-warning">UPDATE</span></td>
+                                    <td>amount</td>
+                                    <td>₹48,000</td>
+                                    <td>₹50,000</td>
+                                    <td>mary_accountant</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 16:45:10</td>
+                                    <td>1246</td>
+                                    <td><span class="badge bg-warning">UPDATE</span></td>
+                                    <td>description</td>
+                                    <td>Cement purchase</td>
+                                    <td>Cement purchase for foundation</td>
+                                    <td>mary_accountant</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 14:20:33</td>
+                                    <td>1245</td>
+                                    <td><span class="badge bg-danger">DELETE</span></td>
+                                    <td>-</td>
+                                    <td>Entry Active</td>
+                                    <td>Entry Deleted</td>
+                                    <td>john_accountant</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 12:30:15</td>
+                                    <td>1244</td>
+                                    <td><span class="badge bg-success">CREATE</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>Entry Created</td>
+                                    <td>john_accountant</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-14 18:15:22</td>
+                                    <td>1243</td>
+                                    <td><span class="badge bg-warning">UPDATE</span></td>
+                                    <td>shop_id</td>
+                                    <td>NULL</td>
+                                    <td>ABC Cement Suppliers</td>
+                                    <td>mary_accountant</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-3">
+                    <strong>Note:</strong> Audit trail tracks all changes to ledger entries with field-level detail.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

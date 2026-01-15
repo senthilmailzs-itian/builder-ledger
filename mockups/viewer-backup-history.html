@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Backup History (Viewer)</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">viewer_ram (REPORT_VIEWER)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="viewer-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="viewer-project-view.html">📖 Project View</a>
+                    <a class="nav-link" href="viewer-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link" href="viewer-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link active" href="viewer-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Backup History (Read-Only)</h2>
+
+                <div class="alert alert-info">
+                    <strong>Note:</strong> REPORT_VIEWER role can view backup history but cannot create backups. Contact
+                    ADMIN for backup operations.
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Backup Filename</th>
+                                    <th>Type</th>
+                                    <th>Created Date</th>
+                                    <th>Size</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>builder-ledger_2026-01-15T17-00-00.db</td>
+                                    <td><span class="badge bg-primary">AUTO</span></td>
+                                    <td>2026-01-15 17:00:00</td>
+                                    <td>12.5 MB</td>
+                                    <td><span class="badge bg-success">Success</span></td>
+                                </tr>
+                                <tr>
+                                    <td>builder-ledger_2026-01-08T09-30-15.db</td>
+                                    <td><span class="badge bg-primary">AUTO</span></td>
+                                    <td>2026-01-08 09:30:15</td>
+                                    <td>11.8 MB</td>
+                                    <td><span class="badge bg-success">Success</span></td>
+                                </tr>
+                                <tr>
+                                    <td>builder-ledger_2026-01-01T10-00-00.db</td>
+                                    <td><span class="badge bg-primary">AUTO</span></td>
+                                    <td>2026-01-01 10:00:00</td>
+                                    <td>10.9 MB</td>
+                                    <td><span class="badge bg-success">Success</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

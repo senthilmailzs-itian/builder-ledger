@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+
+        .card-stat {
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .card-stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">admin (ADMIN)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="admin-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="admin-user-management.html">👥 User Management</a>
+                    <a class="nav-link" href="admin-project-management.html">🏗️ Project Management</a>
+                    <a class="nav-link" href="admin-shop-management.html">🏪 Shop Management</a>
+                    <a class="nav-link" href="admin-category-management.html">📁 Category Management</a>
+                    <a class="nav-link" href="admin-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="admin-shop-ledger.html">📖 Shop Ledger</a>
+                    <a class="nav-link" href="admin-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="admin-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Dashboard</h2>
+
+                <!-- Summary Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Users</h6>
+                                <div class="stat-value">12</div>
+                                <small class="text-success">+2 this month</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Active Projects</h6>
+                                <div class="stat-value">8</div>
+                                <small class="text-info">5 closed</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Active Shops</h6>
+                                <div class="stat-value">25</div>
+                                <small class="text-info">3 closed</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Entries</h6>
+                                <div class="stat-value">1,247</div>
+                                <small class="text-success">+45 this week</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Recent Activity</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-01-15 17:30</td>
+                                    <td>john_accountant</td>
+                                    <td><span class="badge bg-success">CREATE</span></td>
+                                    <td>Added ledger entry for Building A - ₹50,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 16:45</td>
+                                    <td>mary_accountant</td>
+                                    <td><span class="badge bg-warning">UPDATE</span></td>
+                                    <td>Updated shop payment - ABC Cement</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 15:20</td>
+                                    <td>admin</td>
+                                    <td><span class="badge bg-info">CLOSE</span></td>
+                                    <td>Closed project: Building B</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 14:10</td>
+                                    <td>admin</td>
+                                    <td><span class="badge bg-primary">CREATE</span></td>
+                                    <td>Added new user: viewer_ram</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-15 12:30</td>
+                                    <td>john_accountant</td>
+                                    <td><span class="badge bg-success">CREATE</span></td>
+                                    <td>Payment received - Building A - ₹2,00,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

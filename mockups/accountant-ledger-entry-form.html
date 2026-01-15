@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Ledger Entry Form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">john_accountant (ACCOUNTANT)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="accountant-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="accountant-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link active" href="accountant-ledger-entry-form.html">✏️ Ledger Entry</a>
+                    <a class="nav-link" href="accountant-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="accountant-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Add Ledger Entry</h2>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="project" class="form-label">Project <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="project" required>
+                                        <option value="">Select Project</option>
+                                        <option selected>Building A - Residential Complex</option>
+                                        <option>Villa Project - Sector 5</option>
+                                        <option>Highway Construction - Phase 1</option>
+                                        <option>School Building Renovation</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="actionDate" class="form-label">Action Date <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="actionDate" value="2026-01-15" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="category" class="form-label">Category <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="category" required>
+                                        <option value="">Select Category</option>
+                                        <optgroup label="Payment">
+                                            <option>Payment Received</option>
+                                            <option>Shop Payment</option>
+                                            <option>Refund to Customer</option>
+                                        </optgroup>
+                                        <optgroup label="Expense">
+                                            <option selected>Cement</option>
+                                            <option>Steel</option>
+                                            <option>Labor</option>
+                                            <option>Bricks</option>
+                                            <option>Sand</option>
+                                            <option>Electrical</option>
+                                            <option>Plumbing</option>
+                                            <option>Miscellaneous</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="shop" class="form-label">Shop (Optional for Expenses)</label>
+                                    <select class="form-select" id="shop">
+                                        <option value="">No Shop</option>
+                                        <option selected>ABC Cement Suppliers</option>
+                                        <option>XYZ Steel Works</option>
+                                        <option>Rajesh Hardware</option>
+                                        <option>Modern Electricals</option>
+                                        <option>City Plumbing</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="amount" class="form-label">Amount (₹) <span
+                                            class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="amount" placeholder="Enter amount"
+                                        value="50000" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="paymentMode" class="form-label">Payment Mode</label>
+                                    <select class="form-select" id="paymentMode">
+                                        <option value="">Select Mode</option>
+                                        <option selected>Cash</option>
+                                        <option>Cheque</option>
+                                        <option>Bank Transfer</option>
+                                        <option>UPI</option>
+                                        <option>Card</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="paymentReference" class="form-label">Payment Reference</label>
+                                <input type="text" class="form-control" id="paymentReference"
+                                    placeholder="Cheque no. / Transaction ID / Reference">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3"
+                                    placeholder="Enter description">Cement purchase for foundation work</textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="attachments" class="form-label">Attachments (Max 5 files, 5MB each)</label>
+                                <input type="file" class="form-control" id="attachments" multiple
+                                    accept=".jpg,.jpeg,.png,.pdf">
+                                <small class="text-muted">Supported formats: JPG, PNG, PDF</small>
+                            </div>
+
+                            <div class="alert alert-info">
+                                <strong>Note:</strong> This is a static mockup. No data will be saved.
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-primary"
+                                    onclick="alert('This is a static mockup. No data will be saved.')">
+                                    Save Entry
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - UI Mockups Navigator</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .role-section {
+            margin-bottom: 40px;
+        }
+        .role-section h2 {
+            color: #764ba2;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .screen-link {
+            display: block;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .screen-link:hover {
+            background: #e9ecef;
+            border-left-color: #764ba2;
+            transform: translateX(5px);
+        }
+        .badge-role {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">🏗️ Builder Ledger - UI Mockups Navigator</h1>
+        <p class="text-center text-muted mb-5">Static HTML mockups for demo and user validation purposes</p>
+
+        <!-- Common Screens -->
+        <div class="role-section">
+            <h2><span class="badge badge-role">Common</span> Shared Screens</h2>
+            <a href="login.html" class="screen-link">
+                🔐 Login Screen
+            </a>
+        </div>
+
+        <!-- ADMIN Screens -->
+        <div class="role-section">
+            <h2><span class="badge badge-role">ADMIN</span> Administrator Screens</h2>
+            <a href="admin-dashboard.html" class="screen-link">
+                📊 Dashboard (Summary Cards)
+            </a>
+            <a href="admin-user-management.html" class="screen-link">
+                👥 User Management
+            </a>
+            <a href="admin-project-management.html" class="screen-link">
+                🏗️ Project Management
+            </a>
+            <a href="admin-shop-management.html" class="screen-link">
+                🏪 Shop Management
+            </a>
+            <a href="admin-category-management.html" class="screen-link">
+                📁 Category Management
+            </a>
+            <a href="admin-project-ledger.html" class="screen-link">
+                📖 Project Ledger View (Read-Only)
+            </a>
+            <a href="admin-shop-ledger.html" class="screen-link">
+                📖 Shop Ledger View (Read-Only)
+            </a>
+            <a href="admin-audit-trail.html" class="screen-link">
+                🔍 Audit Trail
+            </a>
+            <a href="admin-backup-history.html" class="screen-link">
+                💾 Backup History
+            </a>
+        </div>
+
+        <!-- ACCOUNTANT Screens -->
+        <div class="role-section">
+            <h2><span class="badge badge-role">ACCOUNTANT</span> Accountant Screens</h2>
+            <a href="accountant-dashboard.html" class="screen-link">
+                📊 Dashboard
+            </a>
+            <a href="accountant-project-ledger.html" class="screen-link">
+                📖 Project Ledger View (Add/Edit/Delete)
+            </a>
+            <a href="accountant-shop-view.html" class="screen-link">
+                🏪 Shop View (Outstanding Payables)
+            </a>
+            <a href="accountant-ledger-entry-form.html" class="screen-link">
+                ✏️ Ledger Entry Form
+            </a>
+            <a href="accountant-audit-trail.html" class="screen-link">
+                🔍 Audit Trail (Read-Only)
+            </a>
+            <a href="accountant-backup-history.html" class="screen-link">
+                💾 Backup History (Read-Only)
+            </a>
+        </div>
+
+        <!-- REPORT_VIEWER Screens -->
+        <div class="role-section">
+            <h2><span class="badge badge-role">REPORT_VIEWER</span> Report Viewer Screens</h2>
+            <a href="viewer-dashboard.html" class="screen-link">
+                📊 Dashboard (Read-Only)
+            </a>
+            <a href="viewer-project-view.html" class="screen-link">
+                📖 Project View (Read-Only)
+            </a>
+            <a href="viewer-shop-view.html" class="screen-link">
+                🏪 Shop View (Read-Only)
+            </a>
+            <a href="viewer-audit-trail.html" class="screen-link">
+                🔍 Audit Trail (Read-Only)
+            </a>
+            <a href="viewer-backup-history.html" class="screen-link">
+                💾 Backup History (Read-Only)
+            </a>
+        </div>
+
+        <div class="alert alert-info mt-5">
+            <strong>Note:</strong> These are static HTML mockups with dummy data for demonstration purposes only. 
+            No actual logic, calculations, or database interactions are implemented.
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Project View (Viewer)</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+
+        .balance-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">viewer_ram (REPORT_VIEWER)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="viewer-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link active" href="viewer-project-view.html">📖 Project View</a>
+                    <a class="nav-link" href="viewer-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link" href="viewer-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="viewer-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Project View (Read-Only)</h2>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <select class="form-select">
+                            <option>Building A - Residential Complex</option>
+                            <option>Villa Project - Sector 5</option>
+                            <option>Highway Construction - Phase 1</option>
+                            <option>School Building Renovation</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" value="2026-01-01">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" value="2026-01-15">
+                    </div>
+                </div>
+
+                <div class="card balance-card mb-4">
+                    <div class="card-body text-center">
+                        <h5>Current Project Balance</h5>
+                        <h2 class="mb-0">₹12,50,000</h2>
+                        <small>Building A - Residential Complex</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Shop</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-01-15</td>
+                                    <td>Payment Received</td>
+                                    <td>-</td>
+                                    <td>Customer payment - Phase 1</td>
+                                    <td class="text-success">+₹5,00,000</td>
+                                    <td><span class="badge bg-success">IN</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-14</td>
+                                    <td>Cement</td>
+                                    <td>ABC Cement</td>
+                                    <td>Foundation cement purchase</td>
+                                    <td class="text-danger">-₹50,000</td>
+                                    <td><span class="badge bg-warning">OUT</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-12</td>
+                                    <td>Steel</td>
+                                    <td>XYZ Steel Works</td>
+                                    <td>Steel rods for structure</td>
+                                    <td class="text-danger">-₹2,00,000</td>
+                                    <td><span class="badge bg-warning">OUT</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-10</td>
+                                    <td>Labor</td>
+                                    <td>-</td>
+                                    <td>Weekly labor payment</td>
+                                    <td class="text-danger">-₹75,000</td>
+                                    <td><span class="badge bg-warning">OUT</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08</td>
+                                    <td>Payment Received</td>
+                                    <td>-</td>
+                                    <td>Advance payment from customer</td>
+                                    <td class="text-success">+₹10,00,000</td>
+                                    <td><span class="badge bg-success">IN</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-3">
+                    <strong>Note:</strong> REPORT_VIEWER role has read-only access. No add/edit/delete operations
+                    available.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

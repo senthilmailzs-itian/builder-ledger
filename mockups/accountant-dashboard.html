@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Accountant Dashboard</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+
+        .card-stat {
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .card-stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">john_accountant (ACCOUNTANT)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="accountant-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="accountant-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link" href="accountant-ledger-entry-form.html">✏️ Ledger Entry</a>
+                    <a class="nav-link" href="accountant-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="accountant-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <h2 class="mb-4">Dashboard</h2>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary">View by Project</button>
+                            <button type="button" class="btn btn-outline-primary">View by Shop</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <select class="form-select form-select-sm d-inline-block w-auto">
+                            <option selected>All Status</option>
+                            <option>ACTIVE</option>
+                            <option>CLOSED</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Active Projects</h6>
+                                <div class="stat-value">8</div>
+                                <small class="text-info">5 closed</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Entries (This Month)</h6>
+                                <div class="stat-value">127</div>
+                                <small class="text-success">+45 this week</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Payments In</h6>
+                                <div class="stat-value text-success">₹45L</div>
+                                <small>This month</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Expenses</h6>
+                                <div class="stat-value text-danger">₹32L</div>
+                                <small>This month</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Project Summary</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Status</th>
+                                    <th>Current Balance</th>
+                                    <th>Last Entry</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Building A - Residential Complex</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-success">₹12,50,000</td>
+                                    <td>2026-01-15</td>
+                                    <td><a href="accountant-project-ledger.html"
+                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Villa Project - Sector 5</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-success">₹8,75,000</td>
+                                    <td>2026-01-14</td>
+                                    <td><a href="accountant-project-ledger.html"
+                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Highway Construction - Phase 1</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-success">₹25,00,000</td>
+                                    <td>2026-01-13</td>
+                                    <td><a href="accountant-project-ledger.html"
+                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
+                                </tr>
+                                <tr>
+                                    <td>School Building Renovation</td>
+                                    <td><span class="badge bg-success">ACTIVE</span></td>
+                                    <td class="text-success">₹5,20,000</td>
+                                    <td>2026-01-12</td>
+                                    <td><a href="accountant-project-ledger.html"
+                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Building B - Commercial Plaza</td>
+                                    <td><span class="badge bg-secondary">CLOSED</span></td>
+                                    <td class="text-muted">₹0</td>
+                                    <td>2025-12-28</td>
+                                    <td><a href="accountant-project-ledger.html"
+                                            class="btn btn-sm btn-outline-secondary">View Only</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

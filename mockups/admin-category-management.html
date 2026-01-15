@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Ledger - Category Management</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .sidebar {
+            background: white;
+            min-height: calc(100vh - 56px);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏗️ Builder Ledger</span>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">admin (ADMIN)</span>
+                <a href="login.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="admin-dashboard.html">📊 Dashboard</a>
+                    <a class="nav-link" href="admin-user-management.html">👥 User Management</a>
+                    <a class="nav-link" href="admin-project-management.html">🏗️ Project Management</a>
+                    <a class="nav-link" href="admin-shop-management.html">🏪 Shop Management</a>
+                    <a class="nav-link active" href="admin-category-management.html">📁 Category Management</a>
+                    <a class="nav-link" href="admin-project-ledger.html">📖 Project Ledger</a>
+                    <a class="nav-link" href="admin-shop-ledger.html">📖 Shop Ledger</a>
+                    <a class="nav-link" href="admin-audit-trail.html">🔍 Audit Trail</a>
+                    <a class="nav-link" href="admin-backup-history.html">💾 Backup History</a>
+                    <hr>
+                    <a class="nav-link text-muted" href="index.html">← Navigator</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Category Management</h2>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addCategoryModal">+
+                        Add Category</button>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">Payment Categories</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Category Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Payment Received</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shop Payment</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Refund to Customer</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-warning">
+                                <h5 class="mb-0">Expense Categories</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Category Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cement</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steel</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Labor</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bricks</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sand</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aggregates</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Electrical</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plumbing</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Miscellaneous</td>
+                                            <td><button class="btn btn-sm btn-outline-primary">Edit</button> <button
+                                                    class="btn btn-sm btn-outline-danger">Delete</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addCategoryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Category Name</label>
+                            <input type="text" class="form-control" placeholder="Enter category name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Type</label>
+                            <select class="form-select">
+                                <option value="PAYMENT">PAYMENT</option>
+                                <option value="EXPENSE" selected>EXPENSE</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save
+                        Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
