@@ -29,7 +29,7 @@ mockups/
 │   │   └── js/
 │   │       └── bootstrap.bundle.min.js (REQUIRED - download separately)
 │   └── css/
-│       └── (optional custom CSS)
+│       └── mobile-responsive.css (mobile/tablet responsive styles)
 ├── index.html                          # Mockup Navigator (START HERE)
 ├── login.html                          # Login Screen
 ├── admin-dashboard.html                # ADMIN Dashboard
@@ -67,27 +67,34 @@ mockups/
 
 ### Step 2: Open in Browser
 
-1. Navigate to the `mockups/` directory
-2. Open `index.html` in your web browser
-3. Click on any screen link to navigate
+## Usage
+
+1. Open `index.html` in your browser to see the mockup navigator
+2. Click on any role section to navigate to specific screens
+3. Use the sidebar navigation within each screen to explore different views
+4. All buttons and forms are static (no backend functionality)
+
+## Mobile Responsiveness
+
+All mockup screens are now mobile-responsive with the following features:
+
+- **Responsive Breakpoints**: Optimized for desktop (>768px), tablet (768px), and mobile (<576px)
+- **Flexible Layouts**: Cards and content stack vertically on smaller screens
+- **Scrollable Tables**: Tables become horizontally scrollable on mobile to preserve data visibility
+- **Adjusted Typography**: Font sizes scale down appropriately for mobile devices
+- **Touch-Friendly**: Buttons and interactive elements sized for touch targets
+- **Sidebar Optimization**: Sidebar navigation adapts for mobile viewing
+
+The responsive styles are defined in `assets/css/mobile-responsive.css` and automatically applied to all screens.
 
 ## Design Features
 
-### Theme
-- **Primary Color**: #667eea (Purple)
-- **Secondary Color**: #764ba2 (Dark Purple)
-- **Gradient**: Linear gradient from primary to secondary
-- **Layout**: Desktop-first, clean enterprise look
-
-### Currency Formatting
-- All amounts displayed in Indian Rupee (₹)
-- Format: ₹12,50,000 (Indian numbering system)
-
-### Navigation
-- Sidebar navigation (role-specific)
-- Header with app name and user info
-- Logout link (visual only)
-- Breadcrumbs where applicable
+- **Purple Gradient Theme**: Uses a professional purple gradient (`#667eea` to `#764ba2`) throughout
+- **Indian Rupee Formatting**: All currency values displayed with ₹ symbol and Indian number formatting (e.g., ₹25,00,000)
+- **Role-Based Navigation**: Each role has a distinct sidebar with appropriate menu items
+- **Consistent Layout**: Header with app name, user info, and logout; sidebar navigation; main content area
+- **Bootstrap 5.3 Components**: Cards, tables, forms, modals, badges, and buttons
+- **Static Data**: All screens contain realistic dummy data for demonstration purposes
 
 ## Role-Based Screens
 

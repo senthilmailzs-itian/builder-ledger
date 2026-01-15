@@ -65,6 +65,9 @@ DESIGN LANGUAGE
 - Indian Rupee formatting in UI text:
   Example: ₹25,00,000
 
+NOTE: Mobile responsiveness was added as an enhancement
+beyond the original desktop-first specification.
+
 =================================================
 APPLICATION CONTEXT (FOR UI ONLY)
 =================================================

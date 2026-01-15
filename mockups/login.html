@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Builder Ledger - Login</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <style>
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -13,27 +15,32 @@
             align-items: center;
             justify-content: center;
         }
+
         .login-card {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
             padding: 40px;
             width: 100%;
             max-width: 400px;
         }
+
         .app-logo {
             text-align: center;
             margin-bottom: 30px;
         }
+
         .app-logo h1 {
             color: #667eea;
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .app-logo p {
             color: #764ba2;
             font-size: 14px;
         }
+
         .btn-login {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
@@ -41,16 +48,19 @@
             padding: 12px;
             font-weight: 600;
         }
+
         .btn-login:hover {
             opacity: 0.9;
             color: white;
         }
+
         .role-selector {
             margin-top: 20px;
             padding: 15px;
             background: #f8f9fa;
             border-radius: 8px;
         }
+
         .role-selector label {
             font-weight: 600;
             color: #667eea;
@@ -59,6 +69,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="login-card">
         <div class="app-logo">
@@ -93,7 +104,8 @@
             </div>
 
             <div class="d-grid mt-4">
-                <button type="button" class="btn btn-login" onclick="alert('This is a static mockup. Please select a role above to navigate.')">
+                <button type="button" class="btn btn-login"
+                    onclick="alert('This is a static mockup. Please select a role above to navigate.')">
                     Login
                 </button>
             </div>
@@ -106,4 +118,5 @@
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
