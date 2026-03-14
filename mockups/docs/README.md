@@ -176,14 +176,20 @@ After mockup validation:
 4. Use as reference for actual implementation
 5. Refer to engineering documentation in `docs/` folder
 
+## How These Were Generated (The UI Mockup Prompt)
+
+These mockups were generated using a strict, UI-only prompt file:  
+`mockups/docs/FINAL-ANTIGRAVITY-UI-MOCKUP-PROMPT.md`
+
+That prompt was written *after* the backend architecture and database schema were defined by the Master Prompt (`docs/00-FINAL-ANTIGRAVITY-PROMPT.md`). Because the UI prompt is based on the final database schema, it ensures that all forms and tables in these mockups have the exact correct fields (e.g., `amount`, `action_date`, `shop_id`).
+
 ## Relationship to Engineering Docs
 
-These mockups are **separate from** the engineering documentation:
+These mockups are **completely separate from** the actual application engineering code:
 
-- **Engineering Docs** (`docs/` folder): Technical specifications, architecture, database design
-- **UI Mockups** (`mockups/` folder): Visual demonstration for user validation
-
-Both should be aligned but serve different purposes.
+- **Master Architectural Prompt** (`docs/00-FINAL-ANTIGRAVITY-PROMPT.md`): Dictates the backend rules, database schema, and IPC logic.
+- **Engineering Docs** (`docs/01` to `07`): The actual technical specifications, architecture, and database design.
+- **UI Mockups** (`mockups/` folder): Visual HTML/CSS demonstration for user validation only. No backend code.
 
 ---
 

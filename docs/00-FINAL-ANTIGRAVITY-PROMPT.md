@@ -267,7 +267,8 @@ Generate ONLY the following PRODUCTION-READY documents:
 3. Low-Level Design (LLD – design only)
 4. Database Design + ERD (design-level)
 5. Technical Prerequisites & Installation Guide
-6. .github/copilot-instructions.md (rules only)
+6. Tech Stack Deep Dive (overview + deep dive of all technologies with real use cases)
+7. .github/copilot-instructions.md (rules only)
 
 FOLLOW THIS PROMPT STRICTLY.
 DO NOT DEVIATE.
