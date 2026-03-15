@@ -37,21 +37,21 @@ mockups/
 ├── admin-project-management.html       # ADMIN Project Management
 ├── admin-shop-management.html          # ADMIN Shop Management
 ├── admin-category-management.html      # ADMIN Category Management
-├── admin-project-ledger.html           # ADMIN Project Ledger (Read-Only)
-├── admin-shop-ledger.html              # ADMIN Shop Ledger (Read-Only)
+├── admin-project-ledger.html           # ADMIN Project Ledger View (read-only)
+├── admin-shop-ledger.html              # ADMIN Shop Ledger View (read-only)
 ├── admin-audit-trail.html              # ADMIN Audit Trail
 ├── admin-backup-history.html           # ADMIN Backup History
 ├── accountant-dashboard.html           # ACCOUNTANT Dashboard
 ├── accountant-project-ledger.html      # ACCOUNTANT Project Ledger (Add/Edit/Delete)
-├── accountant-shop-view.html           # ACCOUNTANT Shop View (Make Payments)
+├── accountant-shop-ledger.html         # ACCOUNTANT Shop Ledger (Make Payments)
 ├── accountant-ledger-entry-form.html   # ACCOUNTANT Ledger Entry Form
-├── accountant-audit-trail.html         # ACCOUNTANT Audit Trail (Read-Only)
-├── accountant-backup-history.html      # ACCOUNTANT Backup History (Read-Only)
-├── viewer-dashboard.html               # REPORT_VIEWER Dashboard (Read-Only)
-├── viewer-project-view.html            # REPORT_VIEWER Project View (Read-Only)
-├── viewer-shop-view.html               # REPORT_VIEWER Shop View (Read-Only)
-├── viewer-audit-trail.html             # REPORT_VIEWER Audit Trail (Read-Only)
-└── viewer-backup-history.html          # REPORT_VIEWER Backup History (Read-Only)
+├── accountant-audit-trail.html         # ACCOUNTANT Audit Trail (read-only)
+├── accountant-backup-history.html      # ACCOUNTANT Backup History (read-only)
+├── viewer-dashboard.html               # REPORT_VIEWER Dashboard
+├── viewer-project-view.html            # REPORT_VIEWER Project Ledger (read-only)
+├── viewer-shop-view.html               # REPORT_VIEWER Shop Ledger (read-only)
+├── viewer-audit-trail.html             # REPORT_VIEWER Audit Trail (read-only)
+└── viewer-backup-history.html          # REPORT_VIEWER Backup History (read-only)
 ```
 
 ## Setup Instructions
@@ -94,35 +94,42 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 - **Role-Based Navigation**: Each role has a distinct sidebar with appropriate menu items
 - **Consistent Layout**: Header with app name, user info, and logout; sidebar navigation; main content area
 - **Bootstrap 5.3 Components**: Cards, tables, forms, modals, badges, and buttons
+- **Standardized Terminology**: Consistent use of **RECEIPT** (money in) and **EXPENSE** (money out) across all ledgers
+- **Advanced Tables**: Ledger tables include multi-select filters, sorting indicators, pagination, and a detailed "View Entry" pop-up modal
+- **Audit Columns**: Management tables (Users, Projects, Shops, Categories) display `Created By`, `Created Date`, `Updated By`, `Updated Date`
+- **Dashboard Audit Widget**: Dashboards show a "Recent Ledger Activity" table with 9-column Audit Trail format (Last 5 Entries) and a "View Full Audit Trail" link
+- **Unified Page Titles**: No "(Read-Only)" suffix in page headings — the role displayed in the navbar indicates the access level
+- **Backup Note Bar**: A styled yellow info bar below the table (not a top alert) for backup access notes
 - **Static Data**: All screens contain realistic dummy data for demonstration purposes
 
 ## Role-Based Screens
 
-### ADMIN (9 screens)
-- Dashboard with summary cards
+### ADMIN (9 screens) ✅
+- Dashboard with summary cards + Recent Ledger Activity widget
 - User Management (add/edit/deactivate users)
 - Project Management (add/edit/close projects)
 - Shop Management (add/edit/close shops)
 - Category Management (payment & expense categories)
-- Project Ledger View (read-only)
-- Shop Ledger View (read-only)
-- Audit Trail (field-level change tracking)
-- Backup History (auto & manual backups)
+- Project Ledger View (read-only, filters + sorting + pagination + View modal)
+- Shop Ledger View (read-only, filters + sorting + pagination + View modal)
+- Audit Trail (9-column field-level change tracking)
+- Backup History (auto & manual backups, 8-week retention)
 
-### ACCOUNTANT (6 screens)
-- Dashboard with project summary
-- Project Ledger (add/edit/delete entries)
-- Shop View (make shop payments)
-- Ledger Entry Form (complete entry form)
-- Audit Trail (read-only)
-- Backup History (read-only)
+### ACCOUNTANT (6 screens) — 3 of 6 confirmed ✅
+> Dashboard, Audit Trail, and Backup History are confirmed consistent with Admin and Report Viewer screens (same layout, same 9-column Audit Trail widget, same yellow bottom note bar on Backup History).
+- Dashboard — ✅ same as Admin/Viewer (stat cards + Recent Ledger Activity widget + View Full Audit Trail link)
+- Project Ledger (add/edit/delete entries) — 🔄 pending
+- Shop Ledger (make shop payments) — 🔄 pending
+- Ledger Entry Form (complete entry form with all fields) — 🔄 pending
+- Audit Trail — ✅ same 9-column format, 4-filter bar (Date From, Date To, User, Action)
+- Backup History — ✅ same layout; yellow bottom note bar (view-only, contact ADMIN); 8-week info card below title
 
-### REPORT_VIEWER (5 screens)
-- Dashboard (read-only summary)
-- Project View (read-only ledger)
-- Shop View (read-only payables)
-- Audit Trail (read-only)
-- Backup History (read-only)
+### REPORT_VIEWER (5 screens) ✅
+- Dashboard with summary cards + Recent Ledger Activity widget
+- Project Ledger (read-only, filters + sorting + pagination + View modal)
+- Shop Ledger (read-only, filters + sorting + pagination + View modal)
+- Audit Trail (read-only, 9-column layout)
+- Backup History (read-only, yellow note bar at bottom)
 
 ## Important Notes
 
@@ -193,6 +200,6 @@ These mockups are **completely separate from** the actual application engineerin
 
 ---
 
-**Status**: ✅ Complete  
+**Status**: ✅ Admin (9/9) | ✅ Report Viewer (5/5) | 🔄 Accountant (3/6 — Dashboard, Audit Trail, Backup History confirmed)  
 **Total Screens**: 22 HTML files  
-**Last Updated**: 2026-01-15
+**Last Updated**: 2026-03-15

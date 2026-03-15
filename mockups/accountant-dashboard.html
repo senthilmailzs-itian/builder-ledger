@@ -74,7 +74,7 @@
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="accountant-dashboard.html">📊 Dashboard</a>
                     <a class="nav-link" href="accountant-project-ledger.html">📖 Project Ledger</a>
-                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop Ledger</a>
                     <a class="nav-link" href="accountant-ledger-entry-form.html">✏️ Ledger Entry</a>
                     <a class="nav-link" href="accountant-audit-trail.html">🔍 Audit Trail</a>
                     <a class="nav-link" href="accountant-backup-history.html">💾 Backup History</a>
@@ -86,23 +86,17 @@
             <div class="col-md-10 p-4">
                 <h2 class="mb-4">Dashboard</h2>
 
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary">View by Project</button>
-                            <button type="button" class="btn btn-outline-primary">View by Shop</button>
+                <!-- Summary Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Users</h6>
+                                <div class="stat-value">12</div>
+                                <small class="text-success">+2 this month</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <select class="form-select form-select-sm d-inline-block w-auto">
-                            <option selected>All Status</option>
-                            <option>ACTIVE</option>
-                            <option>CLOSED</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row g-4 mb-4">
                     <div class="col-md-3">
                         <div class="card card-stat">
                             <div class="card-body">
@@ -115,90 +109,143 @@
                     <div class="col-md-3">
                         <div class="card card-stat">
                             <div class="card-body">
-                                <h6 class="text-muted">Total Entries (This Month)</h6>
-                                <div class="stat-value">127</div>
-                                <small class="text-success">+45 this week</small>
+                                <h6 class="text-muted">Active Shops</h6>
+                                <div class="stat-value">25</div>
+                                <small class="text-info">3 closed</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card card-stat">
                             <div class="card-body">
-                                <h6 class="text-muted">Total Payments In</h6>
-                                <div class="stat-value text-success">₹45L</div>
-                                <small>This month</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-stat">
-                            <div class="card-body">
-                                <h6 class="text-muted">Total Expenses</h6>
-                                <div class="stat-value text-danger">₹32L</div>
-                                <small>This month</small>
+                                <h6 class="text-muted">Total Categories</h6>
+                                <div class="stat-value">12</div>
+                                <small class="text-info">3 payment, 9 expense</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header bg-white">
-                        <h5 class="mb-0">Project Summary</h5>
+                <!-- Second Row -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card card-stat">
+                            <div class="card-body">
+                                <h6 class="text-muted">Total Entries</h6>
+                                <div class="stat-value">1,247</div>
+                                <small class="text-success">+45 this week</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Project Name</th>
-                                    <th>Status</th>
-                                    <th>Current Balance</th>
-                                    <th>Last Entry</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Building A - Residential Complex</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td class="text-success">₹12,50,000</td>
-                                    <td>2026-01-15</td>
-                                    <td><a href="accountant-project-ledger.html"
-                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Villa Project - Sector 5</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td class="text-success">₹8,75,000</td>
-                                    <td>2026-01-14</td>
-                                    <td><a href="accountant-project-ledger.html"
-                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Highway Construction - Phase 1</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td class="text-success">₹25,00,000</td>
-                                    <td>2026-01-13</td>
-                                    <td><a href="accountant-project-ledger.html"
-                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
-                                </tr>
-                                <tr>
-                                    <td>School Building Renovation</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td class="text-success">₹5,20,000</td>
-                                    <td>2026-01-12</td>
-                                    <td><a href="accountant-project-ledger.html"
-                                            class="btn btn-sm btn-outline-primary">View Ledger</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Building B - Commercial Plaza</td>
-                                    <td><span class="badge bg-secondary">CLOSED</span></td>
-                                    <td class="text-muted">₹0</td>
-                                    <td>2025-12-28</td>
-                                    <td><a href="accountant-project-ledger.html"
-                                            class="btn btn-sm btn-outline-secondary">View Only</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Recent Ledger Activity <small class="text-muted fs-6 fw-normal">(Last 5
+                                Entries)</small></h5>
+                        <a href="accountant-audit-trail.html" class="btn btn-sm btn-outline-primary">View Full Audit
+                            Trail ➔</a>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Entry ID</th>
+                                        <th>Context</th>
+                                        <th>Action</th>
+                                        <th>Field</th>
+                                        <th>Old Value</th>
+                                        <th>New Value</th>
+                                        <th>Changed By</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2026-01-15 17:30:45</td>
+                                        <td>1247</td>
+                                        <td>
+                                            <div class="small text-muted" style="line-height:1;">Project</div>
+                                            Skyline Apartments
+                                        </td>
+                                        <td><span class="badge bg-success">CREATE</span></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Entry Created</td>
+                                        <td>john_accountant</td>
+                                        <td class="text-muted text-truncate" style="max-width: 150px;"
+                                            title="Initial ledger creation">Initial ledger creation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-01-15 16:45:12</td>
+                                        <td>1246</td>
+                                        <td>
+                                            <div class="small text-muted" style="line-height:1;">Project</div>
+                                            Skyline Apartments
+                                        </td>
+                                        <td><span class="badge bg-warning">UPDATE</span></td>
+                                        <td>amount</td>
+                                        <td>₹48,000</td>
+                                        <td>₹50,000</td>
+                                        <td>mary_accountant</td>
+                                        <td class="text-muted text-truncate" style="max-width: 150px;"
+                                            title="Corrected amount per invoice">Corrected amount per invoice</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-01-15 16:45:10</td>
+                                        <td>1246</td>
+                                        <td>
+                                            <div class="small text-muted" style="line-height:1;">Project</div>
+                                            Skyline Apartments
+                                        </td>
+                                        <td><span class="badge bg-warning">UPDATE</span></td>
+                                        <td>comments</td>
+                                        <td>Cement purchase</td>
+                                        <td>Cement purchase for foundation</td>
+                                        <td>mary_accountant</td>
+                                        <td class="text-muted text-truncate" style="max-width: 150px;"
+                                            title="Cement purchase for foundation">Cement purchase for foundation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-01-15 14:20:33</td>
+                                        <td>1245</td>
+                                        <td>
+                                            <div class="small text-muted" style="line-height:1;">Shop</div>
+                                            ABC Hardware
+                                        </td>
+                                        <td><span class="badge bg-danger">DELETE</span></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Entry Deleted</td>
+                                        <td>john_accountant</td>
+                                        <td class="text-muted text-truncate" style="max-width: 150px;"
+                                            title="Duplicate entry removed">Duplicate entry removed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-01-15 12:30:15</td>
+                                        <td>1244</td>
+                                        <td>
+                                            <div class="small text-muted" style="line-height:1;">Project</div>
+                                            Green Valley Villa
+                                        </td>
+                                        <td><span class="badge bg-success">CREATE</span></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Entry Created</td>
+                                        <td>john_accountant</td>
+                                        <td class="text-muted text-truncate" style="max-width: 150px;"
+                                            title="New entry created">New entry created</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white text-center">
+                        <small class="text-muted">Showing 5 most recent activities out of 1,247 total. Use the Audit
+                            Trail for pagination and deep search.</small>
                     </div>
                 </div>
             </div>

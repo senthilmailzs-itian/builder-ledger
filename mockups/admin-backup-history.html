@@ -75,14 +75,44 @@
             <div class="col-md-10 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Backup History</h2>
-                    <button class="btn btn-primary" onclick="alert('Static mockup - select folder for backup')">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backupConfirmModal">
                         💾 Backup Now (On-Demand)
                     </button>
                 </div>
 
-                <div class="alert alert-info">
-                    <strong>Auto Backup:</strong> Weekly automatic backups are triggered on app startup. Last 8 backups
-                    are retained.
+                <div class="card mb-4 bg-light border-0">
+                    <div class="card-body py-2 px-3 small text-muted">
+                        <i class="me-1">ℹ️</i> System automatically retains up to <strong>8 weeks</strong> of backups,
+                        including manual triggers.
+                    </div>
+                </div>
+
+                <!-- Filters Section -->
+                <div class="card mb-4">
+                    <div class="card-body bg-light">
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <label class="form-label small text-muted">Type</label>
+                                <select class="form-select form-select-sm">
+                                    <option selected>All Types</option>
+                                    <option>AUTO</option>
+                                    <option>MANUAL</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label small text-muted">Status</label>
+                                <select class="form-select form-select-sm">
+                                    <option selected>All Status</option>
+                                    <option>Success</option>
+                                    <option>Failed</option>
+                                    <option>In Progress</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button class="btn btn-sm btn-outline-secondary w-100">Clear Filters</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -90,11 +120,11 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Backup Filename</th>
-                                    <th>Type</th>
-                                    <th>Created Date</th>
-                                    <th>Size</th>
-                                    <th>Status</th>
+                                    <th>Backup Filename <span class="text-muted small">↕</span></th>
+                                    <th>Type <span class="text-muted small">↕</span></th>
+                                    <th>Created Date <span class="text-muted small">↕</span></th>
+                                    <th>Size <span class="text-muted small">↕</span></th>
+                                    <th>Status <span class="text-muted small">↕</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -157,11 +187,49 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- Pagination -->
+                    <div
+                        class="card-footer bg-white d-flex justify-content-between align-items-center border-top-0 pt-0">
+                        <small class="text-muted">Showing 1 to 8 of 24 backups</small>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
                 <div class="alert alert-warning mt-3">
                     <strong>Restore:</strong> To restore from backup, close the application and manually replace the
                     database file.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backup Confirmation Modal -->
+    <div class="modal fade" id="backupConfirmModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-primary">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Confirm On-Demand Backup</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to create a manual backup now?</p>
+                    <div class="alert alert-info small mt-3">
+                        <i class="bi bi-info-circle"></i> <strong>Storage Location:</strong> Manual backups are saved
+                        securely in the exact same predefined application folder as your daily/weekly automated backups.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"
+                        onclick="alert('Static mockup - creating backup file')">Yes, Create Backup</button>
                 </div>
             </div>
         </div>

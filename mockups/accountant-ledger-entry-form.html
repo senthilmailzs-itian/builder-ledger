@@ -61,7 +61,7 @@
                 <nav class="nav flex-column">
                     <a class="nav-link" href="accountant-dashboard.html">📊 Dashboard</a>
                     <a class="nav-link" href="accountant-project-ledger.html">📖 Project Ledger</a>
-                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop View</a>
+                    <a class="nav-link" href="accountant-shop-view.html">🏪 Shop Ledger</a>
                     <a class="nav-link active" href="accountant-ledger-entry-form.html">✏️ Ledger Entry</a>
                     <a class="nav-link" href="accountant-audit-trail.html">🔍 Audit Trail</a>
                     <a class="nav-link" href="accountant-backup-history.html">💾 Backup History</a>
@@ -72,7 +72,12 @@
 
             <!-- Main Content -->
             <div class="col-md-10 p-4">
-                <h2 class="mb-4">Add Ledger Entry</h2>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <a href="accountant-project-ledger.html" class="text-muted small">← Back to Project Ledger</a>
+                        <h2 class="mb-0 mt-1">Ledger Entry</h2>
+                    </div>
+                </div>
 
                 <div class="card">
                     <div class="card-body">
@@ -159,9 +164,9 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" rows="3"
-                                    placeholder="Enter description">Cement purchase for foundation work</textarea>
+                                <label for="Comments" class="form-label">Comments</label>
+                                <textarea class="form-control" id="Comments" rows="3"
+                                    placeholder="Enter Comments">Cement purchase for foundation work</textarea>
                             </div>
 
                             <div class="mb-3">
@@ -180,9 +185,9 @@
                                     onclick="alert('This is a static mockup. No data will be saved.')">
                                     Save Entry
                                 </button>
-                                <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                                <a href="accountant-project-ledger.html" class="btn btn-secondary">
                                     Cancel
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>

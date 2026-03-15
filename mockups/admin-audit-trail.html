@@ -77,10 +77,10 @@
 
                 <div class="row mb-4">
                     <div class="col-md-3">
-                        <input type="date" class="form-control" placeholder="From Date" value="2026-01-01">
+                        <input type="date" class="form-control" title="From Date" value="2025-12-16">
                     </div>
                     <div class="col-md-3">
-                        <input type="date" class="form-control" placeholder="To Date" value="2026-01-15">
+                        <input type="date" class="form-control" title="To Date" value="2026-01-15">
                     </div>
                     <div class="col-md-3">
                         <select class="form-select">
@@ -105,72 +105,124 @@
                         <table class="table table-sm table-hover">
                             <thead>
                                 <tr>
-                                    <th>Timestamp</th>
-                                    <th>Entry ID</th>
-                                    <th>Action</th>
-                                    <th>Field</th>
+                                    <th>Timestamp <span class="text-muted small">↕</span></th>
+                                    <th>Entry ID <span class="text-muted small">↕</span></th>
+                                    <th>Context <span class="text-muted small">↕</span></th>
+                                    <th>Action <span class="text-muted small">↕</span></th>
+                                    <th>Field <span class="text-muted small">↕</span></th>
                                     <th>Old Value</th>
                                     <th>New Value</th>
-                                    <th>Changed By</th>
+                                    <th>Changed By <span class="text-muted small">↕</span></th>
+                                    <th>Comments</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>2026-01-15 17:30:45</td>
                                     <td>1247</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Project</div>
+                                        Skyline Apartments
+                                    </td>
                                     <td><span class="badge bg-success">CREATE</span></td>
                                     <td>-</td>
                                     <td>-</td>
                                     <td>Entry Created</td>
                                     <td>john_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="Initial ledger creation">Initial ledger creation</td>
                                 </tr>
                                 <tr>
                                     <td>2026-01-15 16:45:12</td>
                                     <td>1246</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Project</div>
+                                        Skyline Apartments
+                                    </td>
                                     <td><span class="badge bg-warning">UPDATE</span></td>
                                     <td>amount</td>
                                     <td>₹48,000</td>
                                     <td>₹50,000</td>
                                     <td>mary_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="Corrected amount per invoice">Corrected amount per invoice</td>
                                 </tr>
                                 <tr>
                                     <td>2026-01-15 16:45:10</td>
                                     <td>1246</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Project</div>
+                                        Skyline Apartments
+                                    </td>
                                     <td><span class="badge bg-warning">UPDATE</span></td>
-                                    <td>description</td>
+                                    <td>comments</td>
                                     <td>Cement purchase</td>
                                     <td>Cement purchase for foundation</td>
                                     <td>mary_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="	Cement purchase for foundation"> Cement purchase for foundation</td>
                                 </tr>
                                 <tr>
                                     <td>2026-01-15 14:20:33</td>
                                     <td>1245</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Shop</div>
+                                        ABC Hardware
+                                    </td>
                                     <td><span class="badge bg-danger">DELETE</span></td>
                                     <td>-</td>
-                                    <td>Entry Active</td>
+                                    <td>-</td>
                                     <td>Entry Deleted</td>
                                     <td>john_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="Duplicate entry removed">Duplicate entry removed</td>
                                 </tr>
                                 <tr>
                                     <td>2026-01-15 12:30:15</td>
                                     <td>1244</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Project</div>
+                                        Green Valley Villa
+                                    </td>
                                     <td><span class="badge bg-success">CREATE</span></td>
                                     <td>-</td>
                                     <td>-</td>
                                     <td>Entry Created</td>
                                     <td>john_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="New entry created">New entry created</td>
                                 </tr>
                                 <tr>
                                     <td>2026-01-14 18:15:22</td>
                                     <td>1243</td>
+                                    <td>
+                                        <div class="small text-muted" style="line-height:1;">Project</div>
+                                        Green Valley Villa
+                                    </td>
                                     <td><span class="badge bg-warning">UPDATE</span></td>
-                                    <td>shop_id</td>
+                                    <td>shop</td>
                                     <td>NULL</td>
                                     <td>ABC Cement Suppliers</td>
                                     <td>mary_accountant</td>
+                                    <td class="text-muted text-truncate" style="max-width: 150px;"
+                                        title="Assigned shop to entry">Assigned shop to entry</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div
+                        class="card-footer bg-white d-flex justify-content-between align-items-center border-top-0 pt-0">
+                        <small class="text-muted">Showing 1 to 6 of 142 audit logs</small>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
 

@@ -89,28 +89,28 @@ ROLE-BASED SCREEN SET (UI ONLY)
 
 ROLE: ADMIN
 - Login Screen (shared)
-- Dashboard (summary cards – static)
+- Dashboard (summary cards - static)
 - User Management
 - Project Management
 - Shop Management
 - Category Management
 - Project Ledger View (read-only)
 - Shop Ledger View (read-only)
-- Audit Trail (read-only)
+- Audit Trail
 - Backup History
 
 ROLE: ACCOUNTANT
 - Dashboard
-- Project Ledger View
-- Shop View
+- Project Ledger (add/edit/delete entries)
+- Shop Ledger (make shop payments)
 - Ledger Entry Form
 - Audit Trail (read-only)
 - Backup History (read-only)
 
 ROLE: REPORT_VIEWER
-- Dashboard (read-only)
-- Project View (read-only)
-- Shop View (read-only)
+- Dashboard
+- Project Ledger (read-only)
+- Shop Ledger (read-only)
 - Audit Trail (read-only)
 - Backup History (read-only)
 
@@ -141,6 +141,18 @@ NAVIGATION REQUIREMENTS
 - Logout link (visual only)
 - Breadcrumbs (optional)
 - All navigation via anchor links
+
+=================================================
+UI TERMINOLOGY AND STANDARDS
+=================================================
+
+- Terminology: Use "RECEIPT" (Money In / green badge) and "EXPENSE" (Money Out / warning badge). Avoid "IN/OUT" or "Purchase/Payment".
+- Ledger Features: All ledger tables must include Filters above the table, Sorting indicators on headers, Pagination, and an Action column with a "View" modal popup.
+- Management Tables: All management screens (User, Project, Shop, Category) must include standard audit columns: Created By, Created Date, Updated By, Updated Date.
+- Dashboard Titles: Page titles must match the screen name exactly with NO "(Read-Only)" suffix. The role shown in the top navbar already indicates the access level.
+- Audit Trail Table: Columns are Timestamp, Entry ID, Context (entity type + name on two lines), Action (badge), Field, Old Value, New Value, Changed By, Comments. No sorting on Dashboard preview widget.
+- Dashboard Audit Widget: The Dashboard's "Recent Ledger Activity" table must have the same 9-column layout as the full Audit Trail screen, showing Last 5 Entries with a "View Full Audit Trail" link.
+- Backup History Bottom Note: Display a styled yellow note bar at the bottom (below pagination) instead of a top alert, consistent across all roles.
 
 =================================================
 MOCKUP NAVIGATOR (MANDATORY)
@@ -188,4 +200,34 @@ THESE MOCKUPS ARE FOR DEMO PURPOSES ONLY.
 THEY DO NOT DEFINE IMPLEMENTATION DETAILS.
 THEY MUST NOT CONFLICT WITH THE FROZEN ENGINEERING PROMPT.
 
-# END OF UI MOCKUP PROMPT
+=================================================
+SCREEN COMPLETION STATUS (VALIDATED)
+=================================================
+
+ROLE: ADMIN (9/9 CONFIRMED ✅)
+- Dashboard ✅
+- User Management ✅
+- Project Management ✅
+- Shop Management ✅
+- Category Management ✅
+- Project Ledger ✅
+- Shop Ledger ✅
+- Audit Trail ✅
+- Backup History ✅
+
+ROLE: REPORT_VIEWER (5/5 CONFIRMED ✅)
+- Dashboard ✅
+- Project Ledger ✅
+- Shop Ledger ✅
+- Audit Trail ✅
+- Backup History ✅
+
+ROLE: ACCOUNTANT (3/6 CONFIRMED 🔄)
+- Dashboard ✅ (matches Admin/Viewer - same stat cards + 9-col audit widget)
+- Project Ledger 🔄 (pending)
+- Shop Ledger 🔄 (pending)
+- Ledger Entry Form 🔄 (pending)
+- Audit Trail ✅ (same 9-column layout, 4-filter bar with User dropdown added)
+- Backup History ✅ (yellow bottom note bar + 8-week info card; no Create Backup button)
+
+# END OF UI MOCKUP PROMPT

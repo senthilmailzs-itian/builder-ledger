@@ -75,105 +75,138 @@
             <div class="col-md-10 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Shop Management</h2>
-                    <div>
-                        <select class="form-select form-select-sm d-inline-block w-auto me-2">
-                            <option selected>All Status</option>
-                            <option>ACTIVE</option>
-                            <option>CLOSED</option>
-                        </select>
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addShopModal">+
-                            Add Shop</button>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addShopModal">+ Add Shop</button>
+                </div>
+
+                <!-- Filters Section -->
+                <div class="card mb-4">
+                    <div class="card-body bg-light">
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <label class="form-label small text-muted">Filter by Name</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Search shop name...">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small text-muted">Status</label>
+                                <select class="form-select form-select-sm">
+                                    <option selected>All Status</option>
+                                    <option>ACTIVE</option>
+                                    <option>CLOSED</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button class="btn btn-sm btn-outline-secondary w-100">Clear Filters</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Shops Table -->
                 <div class="card">
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Shop Name</th>
-                                    <th>Status</th>
-                                    <th>Created Date</th>
-                                    <th>Created By</th>
-                                    <th>Updated Date</th>
-                                    <th>Updated By</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>ABC Cement Suppliers</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td>2025-12-01</td>
-                                    <td>admin</td>
-                                    <td>2026-01-08</td>
-                                    <td>mary_accountant</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-warning">Close</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>XYZ Steel Works</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td>2025-12-05</td>
-                                    <td>admin</td>
-                                    <td>2025-12-05</td>
-                                    <td>admin</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-warning">Close</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Rajesh Hardware</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td>2025-11-20</td>
-                                    <td>admin</td>
-                                    <td>2026-01-14</td>
-                                    <td>john_accountant</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-warning">Close</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Modern Electricals</td>
-                                    <td><span class="badge bg-secondary">CLOSED</span></td>
-                                    <td>2025-10-10</td>
-                                    <td>admin</td>
-                                    <td>2025-11-15</td>
-                                    <td>admin</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-success">Reopen</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>City Plumbing</td>
-                                    <td><span class="badge bg-success">ACTIVE</span></td>
-                                    <td>2026-01-10</td>
-                                    <td>admin</td>
-                                    <td>2026-01-10</td>
-                                    <td>admin</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-warning">Close</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Shop Name <span class="text-muted small">↕</span></th>
+                                        <th>Status <span class="text-muted small">↕</span></th>
+                                        <th>Created Date <span class="text-muted small">↕</span></th>
+                                        <th>Created By</th>
+                                        <th>Updated Date <span class="text-muted small">↕</span></th>
+                                        <th>Updated By</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ABC Cement Suppliers</td>
+                                        <td><span class="badge bg-success">ACTIVE</span></td>
+                                        <td>2025-12-01</td>
+                                        <td>admin</td>
+                                        <td>2026-01-08</td>
+                                        <td>mary_accountant</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editShopModal">Edit</button>
+                                            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#closeShopModal">Close</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteShopModal">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>XYZ Steel Works</td>
+                                        <td><span class="badge bg-success">ACTIVE</span></td>
+                                        <td>2025-12-05</td>
+                                        <td>admin</td>
+                                        <td>2025-12-05</td>
+                                        <td>admin</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editShopModal">Edit</button>
+                                            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#closeShopModal">Close</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteShopModal">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rajesh Hardware</td>
+                                        <td><span class="badge bg-success">ACTIVE</span></td>
+                                        <td>2025-11-20</td>
+                                        <td>admin</td>
+                                        <td>2026-01-14</td>
+                                        <td>john_accountant</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editShopModal">Edit</button>
+                                            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#closeShopModal">Close</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteShopModal">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modern Electricals</td>
+                                        <td><span class="badge bg-secondary">CLOSED</span></td>
+                                        <td>2025-10-10</td>
+                                        <td>admin</td>
+                                        <td>2025-11-15</td>
+                                        <td>admin</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editShopModal">Edit</button>
+                                            <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#reopenShopModal">Reopen</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteShopModal">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>City Plumbing</td>
+                                        <td><span class="badge bg-success">ACTIVE</span></td>
+                                        <td>2026-01-10</td>
+                                        <td>admin</td>
+                                        <td>2026-01-10</td>
+                                        <td>admin</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editShopModal">Edit</button>
+                                            <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#closeShopModal">Close</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteShopModal">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Showing 1 to 5 of 15 shops</small>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Add Shop Modal -->
     <div class="modal fade" id="addShopModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -198,8 +231,100 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save
-                        Shop</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Shop Modal -->
+    <div class="modal fade" id="editShopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Shop</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Shop Name</label>
+                            <input type="text" class="form-control" value="ABC Cement Suppliers">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-select">
+                                <option value="ACTIVE" selected>ACTIVE</option>
+                                <option value="CLOSED">CLOSED</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Update Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Close Shop Modal -->
+    <div class="modal fade" id="closeShopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-warning">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title">Close Shop</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to close the shop <strong>ABC Cement Suppliers</strong>?</p>
+                    <p class="text-muted small">No new ledger entries can be added to a closed shop, but existing records are preserved.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-warning" onclick="alert('Static mockup - shop closed')">Yes, Close Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reopen Shop Modal -->
+    <div class="modal fade" id="reopenShopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-success">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Reopen Shop</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to reopen the shop <strong>Modern Electricals</strong>?</p>
+                    <p class="text-muted small">This will allow new ledger entries to be added for this shop.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="alert('Static mockup - shop reopened')">Yes, Reopen Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Shop Modal -->
+    <div class="modal fade" id="deleteShopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to <strong>permanently delete</strong> this shop?</p>
+                    <div class="alert alert-danger">
+                        <strong>Important:</strong> You can only delete shops that have NO associated ledger records. If entries exist, please Close the shop instead.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="alert('Static mockup - shop deleted')">Yes, Delete Permanently</button>
                 </div>
             </div>
         </div>
