@@ -153,10 +153,11 @@ UI TERMINOLOGY AND STANDARDS
   - Project Ledger: 🟢 Overall Receipt | 🟣 Current Project Balance | 🔴 Overall Expense
   - Shop Ledger: 🟢 Total Purchases | 🟣 Amount Paid | 🔴 Outstanding Payable
   - Colors: green (#11998e → #38ef7d), purple (#667eea → #764ba2), red (#c0392b → #e74c3c)
-- Ledger Features: All ledger tables must include Filters above the table, Sorting indicators on all headers **except Amount**, Pagination, and an Action column with a "View" modal popup.
+- Ledger Features: All ledger tables must include Filters above the table, Sorting indicators on all headers **except Amount**, Pagination, and an Action column. Shop Ledger `PURCHASE` rows show View/Pay; `PAYMENT` rows show View/Edit/Delete.
 - View Modal — Project Ledger: Show a direct/non-shop expense (e.g., Labor, Cash payment, no shop, no reference, no attachment).
 - View Modal — Shop Ledger: Show a PURCHASE entry with Payment Mode = "Shop Bill", Payment Ref = "BILL-YYYY-MMDD", Attachment = "bill_receipt.pdf".
-- Shop Bill: Add "Shop Bill" as a Payment Mode option in the Ledger Entry Form. Payment Reference hint should include "Shop Bill".
+- Shop Payment Modals: The "Make Shop Payment" and "Pay for Purchase" modals must use "Action Date", "Comments", and "Attachments". They must NOT map to a Project (except read-only in Pay for Purchase) and must NOT include "Shop Bill" in the Payment Mode dropdown (only Cash, Cheque, Bank Transfer, UPI).
+- Delete Confirm Modals: Must use the standardized specific UI: red `border-danger`, red header, light grey exact entry details box, and a red `alert-danger` warning message box.
 - Management Tables: All management screens (User, Project, Shop, Category) must include standard audit columns: Created By, Created Date, Updated By, Updated Date.
 - Dashboard Titles: Page titles must match the screen name exactly with NO "(Read-Only)" suffix. The role shown in the top navbar already indicates the access level.
 - Audit Trail Table: Columns are Timestamp, Entry ID, Context (entity type + name on two lines), Action (badge), Field, Old Value, New Value, Changed By, Comments. No sorting on Dashboard preview widget.

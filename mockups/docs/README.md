@@ -103,6 +103,7 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 - **Shop Bill Support**: Shop PURCHASE entries use `Shop Bill` as Payment Mode with `BILL-YYYY-MMDD` reference and `bill_receipt.pdf` attachment
 - **Advanced Tables**: Ledger tables include multi-select filters, sorting indicators (except Amount column), pagination, and a detailed "View Entry" pop-up modal
 - **Context-Aware View Modal**: Project Ledger modal shows Labor/direct expenses (Cash, no shop, no attachment); Shop Ledger modal shows Shop Bill entries (bill number, bill_receipt.pdf)
+- **Shop Ledger Modals & Actions**: `PURCHASE` rows have View/Pay buttons ("Pay for Purchase" modal pre-fills specific purchase amount). `PAYMENT` rows have View/Edit/Delete buttons. "Make Shop Payment" removes Project mapping, uses "Action Date", adds Comments/Attachments, and excludes "Shop Bill" from Payment Modes. Delete confirmations use a standard layout (red border, warning alert box).
 - **Audit Columns**: Management tables (Users, Projects, Shops, Categories) display `Created By`, `Created Date`, `Updated By`, `Updated Date`
 - **Dashboard Audit Widget**: Dashboards show a "Recent Ledger Activity" table with 9-column Audit Trail format (Last 5 Entries) and a "View Full Audit Trail" link
 - **Unified Page Titles**: No "(Read-Only)" suffix in page headings — the role displayed in the navbar indicates the access level
@@ -125,7 +126,7 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 ### ACCOUNTANT (6 screens) ✅
 - Dashboard — ✅ same as Admin/Viewer (stat cards + Recent Ledger Activity widget + View Full Audit Trail link)
 - Project Ledger (add/edit/delete entries) — ✅ 3-card summary + filters + table + View modal
-- Shop Ledger (make shop payments) — ✅ 3-card summary + PURCHASE/PAYMENT types + Make Payment modal
+- Shop Ledger (make shop payments) — ✅ 3-card summary + PURCHASE/PAYMENT types + Make Payment modal (Action Date, no project, updated delete confirm) + Pay for Purchase modal
 - Ledger Entry Form (complete entry form with all fields including Shop Bill payment mode) — ✅
 - Audit Trail — ✅ same 9-column format, 4-filter bar (Date From, Date To, User, Action)
 - Backup History — ✅ same layout; yellow bottom note bar (view-only, contact ADMIN); 8-week info card below title

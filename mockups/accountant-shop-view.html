@@ -183,8 +183,8 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
+                                            data-bs-target="#payPurchaseModal">Pay</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -197,8 +197,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editPaymentModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -211,8 +213,8 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
+                                            data-bs-target="#payPurchaseModal">Pay</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -225,8 +227,8 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
+                                            data-bs-target="#payPurchaseModal">Pay</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -239,8 +241,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editPaymentModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -264,6 +268,73 @@
         </div>
     </div>
 
+    <!-- Pay for Purchase Modal -->
+    <div class="modal fade" id="payPurchaseModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pay for Purchase</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Shop</label>
+                            <input type="text" class="form-control" value="ABC Cement Suppliers" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Project</label>
+                            <input type="text" class="form-control" value="Building A - Residential Complex" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Purchase Amount</label>
+                            <input type="text" class="form-control" value="₹50,000" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Payment Amount (₹)</label>
+                            <input type="number" class="form-control" placeholder="Enter amount">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Action Date</label>
+                            <input type="date" class="form-control" value="2026-01-15">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Mode</label>
+                            <select class="form-select">
+                                <option>Cash</option>
+                                <option>Cheque</option>
+                                <option>Bank Transfer</option>
+                                <option>UPI</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Reference</label>
+                            <input type="text" class="form-control"
+                                placeholder="Cheque no. / Transaction ID / Reference">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control" rows="2" placeholder="Add payment remarks..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachment <span
+                                    class="text-muted small">(optional)</span></label>
+                            <input type="file" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+                            <div class="form-text">Attach receipt / bill / proof of payment</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="alert('Static mockup - no data saved')">Make
+                        Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Make Shop Payment Modal -->
     <div class="modal fade" id="makePaymentModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -286,7 +357,7 @@
                             <input type="number" class="form-control" placeholder="Enter amount">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Payment Date</label>
+                            <label class="form-label">Action Date</label>
                             <input type="date" class="form-control" value="2026-01-15">
                         </div>
                         <div class="mb-3">
@@ -300,7 +371,18 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Payment Reference</label>
-                            <input type="text" class="form-control" placeholder="Cheque no. / Transaction ID">
+                            <input type="text" class="form-control"
+                                placeholder="Cheque no. / Transaction ID / Reference">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control" rows="2" placeholder="Add payment remarks..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachment <span
+                                    class="text-muted small">(optional)</span></label>
+                            <input type="file" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+                            <div class="form-text">Attach receipt / bill / proof of payment</div>
                         </div>
                     </form>
                 </div>
@@ -395,6 +477,96 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <!-- Account can Edit/Delete from main table -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Payment Modal -->
+    <div class="modal fade" id="editPaymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Payment Entry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Shop</label>
+                            <input type="text" class="form-control" value="ABC Cement Suppliers" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <input type="text" class="form-control" value="Shop Payment" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Amount (₹)</label>
+                            <input type="number" class="form-control" value="25000">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Action Date</label>
+                            <input type="date" class="form-control" value="2026-01-10">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Mode</label>
+                            <select class="form-select">
+                                <option selected>Cash</option>
+                                <option>Cheque</option>
+                                <option>Bank Transfer</option>
+                                <option>UPI</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Reference</label>
+                            <input type="text" class="form-control" placeholder="Cheque no. / Transaction ID / Reference">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control" rows="2">Partial payment</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachment <span class="text-muted small">(optional)</span></label>
+                            <input type="file" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+                            <div class="form-text">Attach receipt / bill / proof of payment</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to <strong>permanently delete</strong> this payment entry?</p>
+                    
+                    <div class="bg-light rounded p-3 mb-3 border">
+                        <div class="row small">
+                            <div class="col-6 mb-2"><span class="fw-bold text-muted">Shop:</span><br>ABC Cement Suppliers</div>
+                            <div class="col-6 mb-2"><span class="fw-bold text-muted">Amount:</span><br><span class="text-success fw-bold">₹25,000</span></div>
+                            <div class="col-6"><span class="fw-bold text-muted">Date:</span><br>2026-01-10</div>
+                            <div class="col-6"><span class="fw-bold text-muted">Type:</span><br><span class="badge bg-success">PAYMENT</span></div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger mb-0">
+                        <strong>Important:</strong> Deleting this entry will permanently remove it from the ledger, removing this record from the audit trail, and affect the shop's outstanding balance. This action cannot be undone.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="alert('Static mockup - no data deleted')">Yes, Delete Permanently</button>
                 </div>
             </div>
         </div>
