@@ -101,9 +101,8 @@ ROLE: ADMIN
 
 ROLE: ACCOUNTANT
 - Dashboard
-- Project Ledger (add/edit/delete entries)
-- Shop Ledger (make shop payments)
-- Ledger Entry Form
+- Project Ledger (add/edit/delete entries via modals)
+- Shop Ledger (make shop payments via modals)
 - Audit Trail (read-only)
 - Backup History (read-only)
 
@@ -115,7 +114,7 @@ ROLE: REPORT_VIEWER
 - Backup History (read-only)
 
 =================================================
-LEDGER ENTRY FORM (UI MOCKUP ONLY)
+ENTRY FORM MODALS (UI MOCKUP ONLY)
 =================================================
 
 Include fields visually:
@@ -157,6 +156,7 @@ UI TERMINOLOGY AND STANDARDS
 - View Modal — Project Ledger: Show a direct/non-shop expense (e.g., Labor, Cash payment, no shop, no reference, no attachment).
 - View Modal — Shop Ledger: Show a PURCHASE entry with Payment Mode = "Shop Bill", Payment Ref = "BILL-YYYY-MMDD", Attachment = "bill_receipt.pdf".
 - Shop Payment Modals: The "Make Shop Payment" and "Pay for Purchase" modals must use "Action Date", "Comments", and "Attachments". They must NOT map to a Project (except read-only in Pay for Purchase) and must NOT include "Shop Bill" in the Payment Mode dropdown (only Cash, Cheque, Bank Transfer, UPI).
+- Project Ledger Modals: The "Add Entry" modal includes "Shop Bill" in the Payment Mode dropdown. The "Edit Entry" modal has the Project dropdown disabled to prevent moving entries between projects, and correctly demonstrates a shop expense with a "Shop Bill" payment mode, bill reference, and attachment.
 - Delete Confirm Modals: Must use the standardized specific UI: red `border-danger`, red header, light grey exact entry details box, and a red `alert-danger` warning message box.
 - Management Tables: All management screens (User, Project, Shop, Category) must include standard audit columns: Created By, Created Date, Updated By, Updated Date.
 - Dashboard Titles: Page titles must match the screen name exactly with NO "(Read-Only)" suffix. The role shown in the top navbar already indicates the access level.
@@ -232,11 +232,10 @@ ROLE: REPORT_VIEWER (5/5 CONFIRMED ✅)
 - Audit Trail ✅
 - Backup History ✅
 
-ROLE: ACCOUNTANT (6/6 CONFIRMED ✅)
+ROLE: ACCOUNTANT (5/5 CONFIRMED ✅)
 - Dashboard ✅ (matches Admin/Viewer - same stat cards + 9-col audit widget)
-- Project Ledger ✅ (3-card summary + filters + RECEIPT/EXPENSE types + View modal with Labor expense)
+- Project Ledger ✅ (3-card summary + filters + RECEIPT/EXPENSE types + Add/Edit modals + View modal with Labor expense)
 - Shop Ledger ✅ (3-card summary + PURCHASE/PAYMENT types + Make Payment modal + Shop Bill view modal)
-- Ledger Entry Form ✅ (all fields including Shop Bill payment mode + bill reference placeholder)
 - Audit Trail ✅ (same 9-column layout, 4-filter bar with User dropdown added)
 - Backup History ✅ (yellow bottom note bar + 8-week info card; no Create Backup button)
 

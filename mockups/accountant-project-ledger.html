@@ -66,7 +66,6 @@
                     <a class="nav-link" href="accountant-dashboard.html">📊 Dashboard</a>
                     <a class="nav-link active" href="accountant-project-ledger.html">📖 Project Ledger</a>
                     <a class="nav-link" href="accountant-shop-view.html">🏪 Shop Ledger</a>
-                    <a class="nav-link" href="accountant-ledger-entry-form.html">✏️ Ledger Entry</a>
                     <a class="nav-link" href="accountant-audit-trail.html">🔍 Audit Trail</a>
                     <a class="nav-link" href="accountant-backup-history.html">💾 Backup History</a>
                     <hr>
@@ -77,7 +76,8 @@
             <div class="col-md-10 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Project Ledger</h2>
-                    <a href="accountant-ledger-entry-form.html" class="btn btn-primary">+ Add Entry</a>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEntryModal">+ Add
+                        Entry</button>
                 </div>
 
                 <div class="row mb-4">
@@ -125,7 +125,8 @@
 
                 <div class="row mb-4 g-3">
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
                             <div class="card-body text-center py-4">
                                 <h6 class="mb-1 fw-semibold opacity-75">Overall Receipt</h6>
                                 <h3 class="mb-0 fw-bold">₹15,00,000</h3>
@@ -143,7 +144,8 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: white;">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: white;">
                             <div class="card-body text-center py-4">
                                 <h6 class="mb-1 fw-semibold opacity-75">Overall Expense</h6>
                                 <h3 class="mb-0 fw-bold">₹2,50,000</h3>
@@ -178,8 +180,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editEntryModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -192,8 +196,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editEntryModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -206,8 +212,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editEntryModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -220,8 +228,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editEntryModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -234,8 +244,10 @@
                                     <td>
                                         <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                            data-bs-target="#editEntryModal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#deleteConfirmModal">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -312,7 +324,8 @@
 
                             <div class="col-12">
                                 <label class="text-muted small fw-bold mb-1">Comments</label>
-                                <p class="mb-0 bg-light p-2 rounded border">Weekly labor wages - Mason &amp; Helper team</p>
+                                <p class="mb-0 bg-light p-2 rounded border">Weekly labor wages - Mason &amp; Helper team
+                                </p>
                             </div>
 
                             <div class="col-12">
@@ -340,6 +353,217 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <!-- Account can Edit/Delete from main table -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Entry Modal -->
+    <div class="modal fade" id="addEntryModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Ledger Entry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Project <span class="text-danger">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select Project</option>
+                                    <option selected>Building A - Residential Complex</option>
+                                    <option>Villa Project - Sector 5</option>
+                                    <option>Highway Construction - Phase 1</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Action Date <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" value="2026-01-15" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Category <span class="text-danger">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select Category</option>
+                                    <optgroup label="Payment">
+                                        <option>Payment Received</option>
+                                        <option>Refund to Customer</option>
+                                    </optgroup>
+                                    <optgroup label="Expense">
+                                        <option selected>Cement</option>
+                                        <option>Steel</option>
+                                        <option>Labor</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Shop (Optional)</label>
+                                <select class="form-select">
+                                    <option value="">No Shop</option>
+                                    <option selected>ABC Cement Suppliers</option>
+                                    <option>XYZ Steel Works</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Amount (₹) <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" placeholder="Enter amount" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Payment Mode</label>
+                                <select class="form-select">
+                                    <option value="">Select Mode</option>
+                                    <option selected>Cash</option>
+                                    <option>Cheque</option>
+                                    <option>Bank Transfer</option>
+                                    <option>UPI</option>
+                                    <option>Shop Bill</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Reference</label>
+                            <input type="text" class="form-control"
+                                placeholder="Cheque no. / Transaction ID / Reference / Shop Bill">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control" rows="2" placeholder="Enter Comments"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachments <span
+                                    class="text-muted small">(optional)</span></label>
+                            <input type="file" class="form-control" multiple accept=".jpg,.jpeg,.png,.pdf">
+                            <div class="form-text">Max 5 files, 5MB each. Supported: JPG, PNG, PDF</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save
+                        Entry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Entry Modal -->
+    <div class="modal fade" id="editEntryModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Ledger Entry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Project <span class="text-danger">*</span></label>
+                                <select class="form-select" disabled required>
+                                    <option selected>Building A - Residential Complex</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Action Date <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" value="2026-01-14" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Category <span class="text-danger">*</span></label>
+                                <select class="form-select" required>
+                                    <optgroup label="Expense">
+                                        <option selected>Cement</option>
+                                        <option>Steel</option>
+                                        <option>Labor</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Shop (Optional)</label>
+                                <select class="form-select">
+                                    <option selected>ABC Cement Suppliers</option>
+                                    <option>XYZ Steel Works</option>
+                                    <option value="">No Shop</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Amount (₹) <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" value="50000" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Payment Mode</label>
+                                <select class="form-select">
+                                    <option>Cash</option>
+                                    <option>Bank Transfer</option>
+                                    <option selected>Shop Bill</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Reference</label>
+                            <input type="text" class="form-control" value="BILL-2026-0114">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control" rows="2">Foundation cement purchase</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachments <span
+                                    class="text-muted small">(optional)</span></label>
+                            <input type="file" class="form-control" multiple accept=".jpg,.jpeg,.png,.pdf">
+                            <div class="form-text">Currently attached: bill_receipt.pdf</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="alert('Static mockup - no data saved')">Save
+                        Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to <strong>permanently delete</strong> this entry?</p>
+
+                    <div class="bg-light rounded p-3 mb-3 border">
+                        <div class="row small">
+                            <div class="col-6 mb-2"><span class="fw-bold text-muted">Project:</span><br>Building A</div>
+                            <div class="col-6 mb-2"><span class="fw-bold text-muted">Amount:</span><br><span
+                                    class="text-danger fw-bold">-₹50,000</span></div>
+                            <div class="col-6"><span class="fw-bold text-muted">Date:</span><br>2026-01-14</div>
+                            <div class="col-6"><span class="fw-bold text-muted">Category:</span><br>Cement</div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger mb-0">
+                        <strong>Important:</strong> Deleting this entry will permanently remove it from the ledger,
+                        removing this record from the audit trail, and affect the project's overall balance calculation.
+                        This action cannot be undone.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="alert('Static mockup - no data deleted')">Yes,
+                        Delete Permanently</button>
                 </div>
             </div>
         </div>
