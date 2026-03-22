@@ -94,8 +94,15 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 - **Role-Based Navigation**: Each role has a distinct sidebar with appropriate menu items
 - **Consistent Layout**: Header with app name, user info, and logout; sidebar navigation; main content area
 - **Bootstrap 5.3 Components**: Cards, tables, forms, modals, badges, and buttons
-- **Standardized Terminology**: Consistent use of **RECEIPT** (money in) and **EXPENSE** (money out) across all ledgers
-- **Advanced Tables**: Ledger tables include multi-select filters, sorting indicators, pagination, and a detailed "View Entry" pop-up modal
+- **Dual Ledger Terminology**:
+  - **Project Ledger**: Uses `RECEIPT` (money in / green badge) and `EXPENSE` (money out / warning badge)
+  - **Shop Ledger**: Uses `PURCHASE` (material bought / warning badge) and `PAYMENT` (paid to shop / green badge)
+- **3-Card Summary Rows**: Each ledger screen displays three gradient summary cards side by side:
+  - *Project Ledger*: 🟢 Overall Receipt | 🟣 Current Project Balance | 🔴 Overall Expense
+  - *Shop Ledger*: 🟢 Total Purchases | 🟣 Amount Paid | 🔴 Outstanding Payable
+- **Shop Bill Support**: Shop PURCHASE entries use `Shop Bill` as Payment Mode with `BILL-YYYY-MMDD` reference and `bill_receipt.pdf` attachment
+- **Advanced Tables**: Ledger tables include multi-select filters, sorting indicators (except Amount column), pagination, and a detailed "View Entry" pop-up modal
+- **Context-Aware View Modal**: Project Ledger modal shows Labor/direct expenses (Cash, no shop, no attachment); Shop Ledger modal shows Shop Bill entries (bill number, bill_receipt.pdf)
 - **Audit Columns**: Management tables (Users, Projects, Shops, Categories) display `Created By`, `Created Date`, `Updated By`, `Updated Date`
 - **Dashboard Audit Widget**: Dashboards show a "Recent Ledger Activity" table with 9-column Audit Trail format (Last 5 Entries) and a "View Full Audit Trail" link
 - **Unified Page Titles**: No "(Read-Only)" suffix in page headings — the role displayed in the navbar indicates the access level
@@ -115,12 +122,11 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 - Audit Trail (9-column field-level change tracking)
 - Backup History (auto & manual backups, 8-week retention)
 
-### ACCOUNTANT (6 screens) — 3 of 6 confirmed ✅
-> Dashboard, Audit Trail, and Backup History are confirmed consistent with Admin and Report Viewer screens (same layout, same 9-column Audit Trail widget, same yellow bottom note bar on Backup History).
+### ACCOUNTANT (6 screens) ✅
 - Dashboard — ✅ same as Admin/Viewer (stat cards + Recent Ledger Activity widget + View Full Audit Trail link)
-- Project Ledger (add/edit/delete entries) — 🔄 pending
-- Shop Ledger (make shop payments) — 🔄 pending
-- Ledger Entry Form (complete entry form with all fields) — 🔄 pending
+- Project Ledger (add/edit/delete entries) — ✅ 3-card summary + filters + table + View modal
+- Shop Ledger (make shop payments) — ✅ 3-card summary + PURCHASE/PAYMENT types + Make Payment modal
+- Ledger Entry Form (complete entry form with all fields including Shop Bill payment mode) — ✅
 - Audit Trail — ✅ same 9-column format, 4-filter bar (Date From, Date To, User, Action)
 - Backup History — ✅ same layout; yellow bottom note bar (view-only, contact ADMIN); 8-week info card below title
 
@@ -200,6 +206,6 @@ These mockups are **completely separate from** the actual application engineerin
 
 ---
 
-**Status**: ✅ Admin (9/9) | ✅ Report Viewer (5/5) | 🔄 Accountant (3/6 — Dashboard, Audit Trail, Backup History confirmed)  
+**Status**: ✅ Admin (9/9) | ✅ Report Viewer (5/5) | ✅ Accountant (6/6 — All screens confirmed)  
 **Total Screens**: 22 HTML files  
-**Last Updated**: 2026-03-15
+**Last Updated**: 2026-03-22

@@ -146,8 +146,17 @@ NAVIGATION REQUIREMENTS
 UI TERMINOLOGY AND STANDARDS
 =================================================
 
-- Terminology: Use "RECEIPT" (Money In / green badge) and "EXPENSE" (Money Out / warning badge). Avoid "IN/OUT" or "Purchase/Payment".
-- Ledger Features: All ledger tables must include Filters above the table, Sorting indicators on headers, Pagination, and an Action column with a "View" modal popup.
+- Terminology:
+  - **Project Ledger**: Use "RECEIPT" (Money In / green badge) and "EXPENSE" (Money Out / warning badge).
+  - **Shop Ledger**: Use "PURCHASE" (Material Bought / warning badge) and "PAYMENT" (Paid to Shop / green badge). Do NOT use EXPENSE/RECEIPT in shop ledger context.
+- Summary Cards: Each ledger screen must show three gradient summary cards in a row:
+  - Project Ledger: 🟢 Overall Receipt | 🟣 Current Project Balance | 🔴 Overall Expense
+  - Shop Ledger: 🟢 Total Purchases | 🟣 Amount Paid | 🔴 Outstanding Payable
+  - Colors: green (#11998e → #38ef7d), purple (#667eea → #764ba2), red (#c0392b → #e74c3c)
+- Ledger Features: All ledger tables must include Filters above the table, Sorting indicators on all headers **except Amount**, Pagination, and an Action column with a "View" modal popup.
+- View Modal — Project Ledger: Show a direct/non-shop expense (e.g., Labor, Cash payment, no shop, no reference, no attachment).
+- View Modal — Shop Ledger: Show a PURCHASE entry with Payment Mode = "Shop Bill", Payment Ref = "BILL-YYYY-MMDD", Attachment = "bill_receipt.pdf".
+- Shop Bill: Add "Shop Bill" as a Payment Mode option in the Ledger Entry Form. Payment Reference hint should include "Shop Bill".
 - Management Tables: All management screens (User, Project, Shop, Category) must include standard audit columns: Created By, Created Date, Updated By, Updated Date.
 - Dashboard Titles: Page titles must match the screen name exactly with NO "(Read-Only)" suffix. The role shown in the top navbar already indicates the access level.
 - Audit Trail Table: Columns are Timestamp, Entry ID, Context (entity type + name on two lines), Action (badge), Field, Old Value, New Value, Changed By, Comments. No sorting on Dashboard preview widget.
@@ -222,11 +231,11 @@ ROLE: REPORT_VIEWER (5/5 CONFIRMED ✅)
 - Audit Trail ✅
 - Backup History ✅
 
-ROLE: ACCOUNTANT (3/6 CONFIRMED 🔄)
+ROLE: ACCOUNTANT (6/6 CONFIRMED ✅)
 - Dashboard ✅ (matches Admin/Viewer - same stat cards + 9-col audit widget)
-- Project Ledger 🔄 (pending)
-- Shop Ledger 🔄 (pending)
-- Ledger Entry Form 🔄 (pending)
+- Project Ledger ✅ (3-card summary + filters + RECEIPT/EXPENSE types + View modal with Labor expense)
+- Shop Ledger ✅ (3-card summary + PURCHASE/PAYMENT types + Make Payment modal + Shop Bill view modal)
+- Ledger Entry Form ✅ (all fields including Shop Bill payment mode + bill reference placeholder)
 - Audit Trail ✅ (same 9-column layout, 4-filter bar with User dropdown added)
 - Backup History ✅ (yellow bottom note bar + 8-week info card; no Create Backup button)
 

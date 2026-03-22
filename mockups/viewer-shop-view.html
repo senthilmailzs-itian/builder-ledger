@@ -98,8 +98,8 @@
                     <div class="col-md-4">
                         <select class="form-select" title="Filter by Type">
                             <option value="">All Types</option>
-                            <option value="EXPENSE">Expense (Money Out)</option>
-                            <option value="RECEIPT">Receipt (Money In)</option>
+                            <option value="PURCHASE">Purchase (Material Bought)</option>
+                            <option value="PAYMENT">Payment (Paid to Shop)</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -118,11 +118,35 @@
                     </div>
                 </div>
 
-                <div class="card payable-card mb-4">
-                    <div class="card-body text-center">
-                        <h5>Outstanding Payable</h5>
-                        <h2 class="mb-0">₹1,25,000</h2>
-                        <small>For ABC Cement Suppliers</small>
+                <div class="row mb-4 g-3">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">
+                            <div class="card-body text-center py-4">
+                                <h6 class="mb-1 fw-semibold opacity-75">Total Purchases</h6>
+                                <h3 class="mb-0 fw-bold">₹2,25,000</h3>
+                                <small class="opacity-75">Total Bought from Shop</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <div class="card-body text-center py-4">
+                                <h6 class="mb-1 fw-semibold opacity-75">Amount Paid</h6>
+                                <h3 class="mb-0 fw-bold">₹1,00,000</h3>
+                                <small class="opacity-75">Total Settled to Shop</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card payable-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center py-4">
+                                <h6 class="mb-1 fw-semibold opacity-75">Outstanding Payable</h6>
+                                <h3 class="mb-0 fw-bold">₹1,25,000</h3>
+                                <small class="opacity-75">For ABC Cement Suppliers</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -138,7 +162,7 @@
                                     <th>Project <span class="text-muted small">↕</span></th>
                                     <th>Category <span class="text-muted small">↕</span></th>
                                     <th>Comments</th>
-                                    <th>Amount <span class="text-muted small">↕</span></th>
+                                    <th>Amount</th>
                                     <th>Type <span class="text-muted small">↕</span></th>
                                     <th>Action</th>
                                 </tr>
@@ -150,7 +174,7 @@
                                     <td>Cement</td>
                                     <td>Foundation cement</td>
                                     <td class="text-danger">₹50,000</td>
-                                    <td><span class="badge bg-warning text-dark">EXPENSE</span></td>
+                                    <td><span class="badge bg-warning text-dark">PURCHASE</span></td>
                                     <td><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button></td>
                                 </tr>
@@ -160,7 +184,7 @@
                                     <td>Shop Payment</td>
                                     <td>Partial payment</td>
                                     <td class="text-success">₹25,000</td>
-                                    <td><span class="badge bg-success">RECEIPT</span></td>
+                                    <td><span class="badge bg-success">PAYMENT</span></td>
                                     <td><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button></td>
                                 </tr>
@@ -170,7 +194,27 @@
                                     <td>Cement</td>
                                     <td>Cement for walls</td>
                                     <td class="text-danger">₹75,000</td>
-                                    <td><span class="badge bg-warning text-dark">EXPENSE</span></td>
+                                    <td><span class="badge bg-warning text-dark">PURCHASE</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target="#viewEntryModal">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-12-28</td>
+                                    <td>Building A</td>
+                                    <td>Cement</td>
+                                    <td>Initial cement purchase</td>
+                                    <td class="text-danger">₹1,00,000</td>
+                                    <td><span class="badge bg-warning text-dark">PURCHASE</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target="#viewEntryModal">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2025-12-20</td>
+                                    <td>Building A</td>
+                                    <td>Shop Payment</td>
+                                    <td>Advance payment</td>
+                                    <td class="text-success">₹75,000</td>
+                                    <td><span class="badge bg-success">PAYMENT</span></td>
                                     <td><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                             data-bs-target="#viewEntryModal">View</button></td>
                                 </tr>
@@ -216,7 +260,7 @@
                                 <h3 class="text-danger mb-0">₹50,000</h3>
                             </div>
                             <div class="col-sm-6 text-sm-end mt-2 mt-sm-0">
-                                <span class="badge bg-warning text-dark px-3 py-2">EXPENSE</span>
+                                <span class="badge bg-warning text-dark px-3 py-2">PURCHASE</span>
                             </div>
                         </div>
                     </div>
@@ -243,11 +287,11 @@
 
                             <div class="col-md-6">
                                 <label class="text-muted small fw-bold mb-1">Payment Mode</label>
-                                <p class="mb-0">Bank Transfer</p>
+                                <p class="mb-0">Shop Bill</p>
                             </div>
                             <div class="col-md-6">
                                 <label class="text-muted small fw-bold mb-1">Payment Ref.</label>
-                                <p class="mb-0">UTR-SBIN0001234</p>
+                                <p class="mb-0">BILL-2026-0114</p>
                             </div>
 
                             <div class="col-12">
@@ -259,7 +303,7 @@
                                 <label class="text-muted small fw-bold mb-1">Attachments</label>
                                 <div>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        📄 receipt_01.pdf
+                                        📄 bill_receipt.pdf
                                     </a>
                                 </div>
                             </div>
