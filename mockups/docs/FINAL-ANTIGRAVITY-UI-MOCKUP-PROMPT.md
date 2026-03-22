@@ -160,6 +160,7 @@ UI TERMINOLOGY AND STANDARDS
 - Delete Confirm Modals: Must use the standardized specific UI: red `border-danger`, red header, light grey exact entry details box, and a red `alert-danger` warning message box.
 - Management Tables: All management screens (User, Project, Shop, Category) must include standard audit columns: Created By, Created Date, Updated By, Updated Date.
 - Dashboard Titles: Page titles must match the screen name exactly with NO "(Read-Only)" suffix. The role shown in the top navbar already indicates the access level.
+- Branding & Footer: All page headers must display the "Dream Builders, Thiruvarur" name alongside an `assets/img/dream builders.png` image. Every screen must end with a styled bottom footer that explicitly states `© 2026 Dream Builders, Thiruvarur. Software by` followed by the `assets/img/Dheeran OneClick Logo.png` image, cleanly aligned above the tagline `"Think Simple, Use Simple"`.
 - Audit Trail Table: Columns are Timestamp, Entry ID, Context (entity type + name on two lines), Action (badge), Field, Old Value, New Value, Changed By, Comments. No sorting on Dashboard preview widget.
 - Dashboard Audit Widget: The Dashboard's "Recent Ledger Activity" table must have the same 9-column layout as the full Audit Trail screen, showing Last 5 Entries with a "View Full Audit Trail" link.
 - Backup History Bottom Note: Display a styled yellow note bar at the bottom (below pagination) instead of a top alert, consistent across all roles.

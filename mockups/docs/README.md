@@ -107,6 +107,7 @@ The responsive styles are defined in `assets/css/mobile-responsive.css` and auto
 - **Audit Columns**: Management tables (Users, Projects, Shops, Categories) display `Created By`, `Created Date`, `Updated By`, `Updated Date`
 - **Dashboard Audit Widget**: Dashboards show a "Recent Ledger Activity" table with 9-column Audit Trail format (Last 5 Entries) and a "View Full Audit Trail" link
 - **Unified Page Titles**: No "(Read-Only)" suffix in page headings — the role displayed in the navbar indicates the access level
+- **Global Branding**: Navigation bars display the "Dream Builders, Thiruvarur" company name and logo (`assets/img/dream builders.png`). Every screen features a styled global flexbox footer stating `© 2026 Dream Builders, Thiruvarur. Software by` paired with the `assets/img/Dheeran OneClick Logo.png` image logo and the tagline `"Think Simple, Use Simple"`.
 - **Backup Note Bar**: A styled yellow info bar below the table (not a top alert) for backup access notes
 - **Static Data**: All screens contain realistic dummy data for demonstration purposes
 
